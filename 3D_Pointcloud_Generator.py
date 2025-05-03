@@ -59,10 +59,24 @@ def create_irregular_room_with_boxes(center, radius, num_vertices, height, box_s
     room_points = generate_room_walls_and_floor(polygon, height)
 
     all_points = room_points.tolist()
+
     for spec in box_specs:
-        box = generate_box_points(*spec)
-        all_points.extend(box)
+        x, y, z, width, depth, box_height = spec
+        # Check if all 4 base corners of the box are within the polygon
+        corners = [
+            (x, y),
+            (x + width, y),
+            (x, y + depth),
+            (x + width, y + depth)
+        ]
+        if all(polygon.contains(Point(cx, cy)) for cx, cy in corners):
+            box = generate_box_points(x, y, z, width, depth, box_height)
+            all_points.extend(box)
+        else:
+            print(f"Box at ({x}, {y}) with size ({width}, {depth}) is outside the room and was skipped.")
+
     return np.array(all_points), polygon
+
 
 
 def remove_random_points(points, removal_percentage=0.2):
