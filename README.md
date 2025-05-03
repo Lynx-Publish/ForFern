@@ -128,6 +128,7 @@ We welcome contributions to **Project Pickup Line**! If you have suggestions, bu
 
 ## V1.2 of the stacking system.
 This version allows it to have constrainst such as (Place red only on yellow) or only stack red boxes, or locational systems using an integrated IMU which allows it to be later connected to a LLM which converts text to these forms of commands.
+(NOTE this system can be utilized for any constraint such as shape, size, orientation, color, weight, location, anything.)
 
 ![image](https://github.com/user-attachments/assets/ad5927e4-bba3-4044-bfa1-6a8363b21210)
 
