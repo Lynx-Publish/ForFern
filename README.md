@@ -170,5 +170,10 @@ This project proposes an autonomous control system for a robotic manipulator tha
 
 ![image](https://github.com/user-attachments/assets/6002c8cc-e76a-4da5-b0c6-d4afd00f37c5)
 
+## The rebuilt walls from the noisy pointcloud with missing data points and objects inside.
+
+![image](https://github.com/user-attachments/assets/13fe95ed-3133-4ff2-a02b-cd2097a2f4d7)
+
+
 
 
