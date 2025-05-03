@@ -174,6 +174,12 @@ This project proposes an autonomous control system for a robotic manipulator tha
 
 ![image](https://github.com/user-attachments/assets/13fe95ed-3133-4ff2-a02b-cd2097a2f4d7)
 
+## V1.2 of the stacking system.
+This version allows it to have constrainst such as (Place red only on yellow) or only stack red boxes, or locational systems using an integrated IMU which allows it to be later connected to a LLM which converts text to these forms of commands.
+
+![image](https://github.com/user-attachments/assets/ad5927e4-bba3-4044-bfa1-6a8363b21210)
+
+
 
 
 
