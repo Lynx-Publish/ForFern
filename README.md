@@ -1,5 +1,7 @@
 # Project Pickup Line
 
+***"Real Artificial Intelligence stands at the convergence of hard logic, and flexible logic, the mind in my experience utilizes separate tools and communicates between them, such shall AI."***
+
 ## Overview
 
 **Project Pickup Line** is a cutting-edge autonomous navigation system designed to demonstrate that it is possible to map out rooms, track objects, and enable robots or systems to autonomously navigate toward those objects without relying on AI technologies. Instead of AI-driven decision-making, **Project Pickup Line** leverages hardcoded systems to perform the logical computations. However, to elevate the project to the next level, artificial intelligence (AI) technologies such as Large Language Models (LLMs) and Computer Vision (CV) systems are integrated to enable voice control and interaction.
