@@ -1,153 +1,103 @@
----
-
-# Autonomous Robotic Gripping and Control System
+# Project Pickup Line
 
 ## Overview
 
-This project proposes an autonomous control system for a robotic manipulator that utilizes 3D point cloud data and intelligent language-based instructions. The system is designed to identify, grasp, and manipulate objects in a structured environment, enabling efficient interaction with objects based on natural language commands and spatial awareness.
+**Project Pickup Line** is a cutting-edge autonomous navigation system designed to demonstrate that it is possible to map out rooms, track objects, and enable robots or systems to autonomously navigate toward those objects without relying on AI technologies. Instead of AI-driven decision-making, **Project Pickup Line** leverages hardcoded systems to perform the logical computations. However, to elevate the project to the next level, artificial intelligence (AI) technologies such as Large Language Models (LLMs) and Computer Vision (CV) systems are integrated to enable voice control and interaction.
+
+The core concept behind **Project Pickup Line** is to use AI as an interface and agent that acts as a bridge between the human user and the hardcoded logical systems. This allows the AI to interpret voice commands, and process environmental data, but the logic of navigation, decision-making, and mapping comes from well-structured, reliable, and transparent hardcoded systems.
+
+## Key Features
+
+* **Room Mapping**: The system maps out rooms using hardcoded algorithms, allowing for the precise identification of objects and rooms without requiring AI-based mapping solutions.
+
+* **Object Identification & Tracking**: Objects within the room are identified and tracked by using predefined algorithms, avoiding the complexity and uncertainty associated with AI-driven object recognition systems.
+
+* **Autonomous Navigation**: The system can autonomously navigate through a space to reach specific objects based on the predefined logical paths, algorithms, and mapping data. The logic engine ensures that the robot or system can find its way around with precision and reliability.
+
+* **Voice Control**: By integrating AI technologies such as Large Language Models (LLMs) and Computer Vision (CV), users can control the system with natural language commands. The AI interprets voice commands (e.g., "Pick up the coffee mug on the table") and then communicates those instructions to the hardcoded logic system for processing.
+
+* **AI as an Interface**: The AI does not perform the logical processing but instead serves as an intermediary. It translates human commands into a format the hardcoded logic system understands, forming a symbiotic relationship where the AI complements the logical computation without replacing it.
+
+## Goals
+
+* **Proving Autonomous Navigation Without AI**: Demonstrate that autonomous systems do not need AI technologies to handle tasks such as room mapping, object identification, and navigation. Hardcoded systems can handle these tasks effectively with greater transparency, stability, and reliability.
+
+* **Symbiotic Relationship Between AI & Hardcoded Systems**: Show how AI can work with hardcoded systems in a way that each fulfills its purpose. AI provides a conversational interface and user interaction layer, while hardcoded systems execute the underlying logical tasks such as navigation and decision-making.
+
+* **Real-World Applications**: Enable practical applications such as autonomous home assistants, smart room systems, and robots that can be used in real-world environments without being overly dependent on complex AI systems.
+
+## Technical Details
+
+### System Architecture
+
+1. **Hardcoded Logical Systems**:
+
+   * The navigation and room mapping are done using hardcoded systems based on algorithms such as grid-based pathfinding (e.g., A\* or Dijkstra’s algorithm) and object tracking systems that utilize sensors and predefined rules for locating and identifying objects.
+   * Object location is computed by referencing a mapped grid of the room and its environmental features.
+2. **AI Technologies (LLM & CV)**:
+
+   * Large Language Models (LLMs) interpret voice commands and provide feedback to the user.
+   * Computer Vision (CV) can be integrated to provide visual recognition of objects and environmental context. This can work with cameras to visually detect and verify object placements for better precision in object identification and task completion.
+3. **Symbiotic Relationship**:
+
+   * AI is used to interface with the user and provide voice interaction and interpretation of commands. It sends the commands to the logical system, which then processes them and guides the autonomous system.
+   * The logic system uses precise, hardcoded computations to achieve accurate navigation and object manipulation, where AI fails due to its unpredictability or inaccuracy.
+
+### Technology Stack
+
+* **Python**: For implementing hardcoded systems, room mapping algorithms, and logic processing.
+* **Speech Recognition**: To allow the system to accept voice commands via microphone input.
+* **Computer Vision Libraries (OpenCV)**: For object detection and room analysis using cameras.
+* **Navigation Algorithms**: Pathfinding algorithms such as A\* or Dijkstra’s for room mapping and navigation.
+* **Natural Language Processing (NLP)**: For handling voice commands with LLMs, such as OpenAI’s GPT models for interpreting instructions.
+
+## Usage
+
+1. **Voice Commands**:
+
+   * You can issue commands such as:
+
+     * "Navigate to the red box."
+     * "Stack the blue boxes next to the larger ones."
+     * "Where did you put the larger boxes?"
+
+   The AI will interpret these commands and use the logical system to perform the required task.
+
+2. **Autonomous Navigation**:
+
+   * The system will autonomously navigate to the specified object using the pre-configured room map and navigation algorithms.
+
+3. **Object Tracking**:
+
+   * Object positions will be continuously tracked and updated on the system’s map, ensuring real-time accuracy.
+
+## Contributing
+
+We welcome contributions to **Project Pickup Line**! If you have suggestions, bug reports, or want to enhance the system, feel free to fork the repository and create a pull request.
+
+### Steps to Contribute
+
+1. Fork the repository and clone it locally.
+2. Make your changes or additions in a new branch.
+3. Test your changes thoroughly.
+4. Create a pull request with a detailed description of your changes.
+
+## License
+
+**Project Pickup Line** is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
-## Project Goals
-
-### 1. **Gripping System and Object Detection**
-
-* **3D Point Cloud Processing:**
-
-  * Use point cloud data to identify objects in the environment.
-  * Segment objects via island grouping and generate non-triangular meshes.
-
-* **Bounding Box Generation:**
-
-  * Create bounding boxes around each detected object with configurable tolerances.
-
-* **Center of Gravity Estimation:**
-
-  * Calculate the center of gravity to determine the optimal gripping points for objects.
-
-* **Flat-Plane Contact Optimization:**
-
-  * Identify flat surfaces on the object most aligned with the planar orientation of the robot's grippers.
-
-* **Grip Feedback System:**
-
-  * Utilize three pressure sensors per gripper (on each robotic arm) to confirm a secure grip across multiple contact points.
-
----
-
-### 2. **Multimodal Perception and Language Interface**
-
-* **LLM Integration (e.g., ChatGPT, LLaMA):**
-
-  * Implement a multi-layered LLM system with an initial speech-to-text layer to interpret user commands.
-  * Example: A user may say "Grab the green box," and the system parses this command into structured constraints.
-
-    * Format: Action, Object(s), Goal Location/Relation.
-
-* **Visual Recognition Pipeline:**
-
-  * Use an RGB camera combined with a depth camera to:
-
-    * Detect and label objects by color.
-    * Match resolution and align depth data to RGB midpoints.
-    * Annotate bounding boxes in reference to environmental landmarks (e.g., walls, orientation, cardinal directions).
-
----
-
-### 3. **Environment Awareness and State Tracking**
-
-* **State Management:**
-
-  * Maintain internal states such as moving, standing, still, crouched, grabbing, box\_grabbed.
-  * These states inform real-time planning and feedback to ensure smooth interaction with the environment.
-
-* **Logical Constraint Handling:**
-
-  * Convert natural language instructions into actionable logic.
-  * Examples of commands:
-
-    * "Stack the blue box on the red box" → `stack(blue_box, red_box)`
-    * "Place the red box near the north wall" → `place(red_box, location=north_wall)`
-
-* **Action Execution:**
-
-  * Use parsed logic to generate executable commands like:
-
-    * `walk(0.5ft_forward)`
-    * `crouch()`
-    * `grab(box_id)`
-
----
-
-### 4. **Object Sorting and Planning**
-
-* **Stacking Planner:**
-
-  * Implement a system to determine the correct order of stacking based on object attributes:
-
-    * **Color**
-    * **Size**
-    * **Basic Geometric Shape**
-
-* **Decision Making:**
-
-  * The system makes decisions using the current object metadata and spatial awareness to plan tasks such as stacking and placement.
-
----
-
-## Project Checklist and Milestones
-
-### **1. Gripping System and Object Detection:**
-
-* [ ] Integrate point cloud processing pipeline for object detection.
-* [ ] Implement bounding box generation around objects.
-* [ ] Develop center of gravity estimation algorithm.
-* [ ] Optimize flat-plane contact for gripper alignment.
-* [ ] Test and calibrate pressure sensor feedback for secure gripping.
-
-### **2. Multimodal Perception and Language Interface:**
-
-* [ ] Integrate speech-to-text layer for natural language processing.
-* [ ] Implement object detection using RGB and depth camera combination.
-* [ ] Annotate bounding boxes and link to environmental landmarks.
-* [ ] Parse natural language commands into actionable logic for the robot.
-
-### **3. Environment Awareness and State Tracking:**
-
-* [ ] Develop internal state management system for robot actions.
-* [ ] Convert natural language instructions into logical actions.
-* [ ] Implement real-time state tracking for environment awareness.
-
-### **4. Object Sorting and Planning:**
-
-* [ ] Build the object sorting and stacking planner based on color, size, and shape.
-* [ ] Ensure spatial awareness is used for correct placement and ordering of objects.
-
----
-
-## How to Use
-
-1. **Installation:**
-   Follow the installation steps below to set up the necessary dependencies and hardware setup for running the system.
-
-2. **Running the System:**
-   To begin using the system, simply launch the program and speak your commands (e.g., "Grab the green box" or "Stack the blue box on the red box").
-
-3. **Command Syntax:**
-
-   * **Grab Object:** `Grab [object_name]`
-   * **Place Object:** `Place [object_name] [location]`
-   * **Stack Objects:** `Stack [object_name] on [object_name]`
-
----
+**Project Pickup Line** combines the reliability of hardcoded logic with the flexibility of AI to create an efficient and robust autonomous navigation system, while pushing the boundaries of voice control and user interaction. Through this project, we show that AI can complement but not always replace the power of traditional computational systems in real-world applications.
 
 ## Requirements
 
 * Python 3.8+
+* IMU
 * ROS (Robot Operating System) for robot control
 * OpenCV for computer vision tasks
 * Point Cloud Library (PCL) for 3D processing
-* A compatible robotic manipulator with grippers and sensors
+* A compatible robotic manipulator with grippers and sensors for detetcion of pressure on grippers.
 * Depth and RGB cameras
 
 ---
