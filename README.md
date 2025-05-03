@@ -130,7 +130,7 @@ This version allows it to have constrainst such as (Place red only on yellow) or
 ![image](https://github.com/user-attachments/assets/ad5927e4-bba3-4044-bfa1-6a8363b21210)
 
 ## V1.5 of the reconstruction system taht allows for the recognition of objects in a scene such as boxes or items and assigning them adaptive bounding boxes.
-The goal of this system is to allow a stable refrence to the general location of objects in refrence to self location collected from markesr such as other objects and walls.
+The goal of this system is to allow a stable refrence to the general location of objects in refrence to self location collected from markers such as other objects and walls.
 
 ![image](https://github.com/user-attachments/assets/8e539318-386f-4c24-a069-222eaf6206e4)
 
