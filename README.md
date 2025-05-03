@@ -166,4 +166,9 @@ This project proposes an autonomous control system for a robotic manipulator tha
 
 ![image](https://github.com/user-attachments/assets/31a60e31-c2ae-4981-b292-46f795a24b9e)
 
+## V1.0 of the pointcloud generation system for testing enviromental detection.
+
+![image](https://github.com/user-attachments/assets/6002c8cc-e76a-4da5-b0c6-d4afd00f37c5)
+
+
 
