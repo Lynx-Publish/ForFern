@@ -159,5 +159,11 @@ This project proposes an autonomous control system for a robotic manipulator tha
 
 ---
 
-##V1.0 of box stacking system ![image](https://github.com/user-attachments/assets/29004706-4398-443b-9867-7dabdbd538ab)
+## V1.0 of box stacking system 
+![image](https://github.com/user-attachments/assets/29004706-4398-443b-9867-7dabdbd538ab)
+
+## V1.1 of stacking with geospatial tags and constraints in generation.
+
+![image](https://github.com/user-attachments/assets/31a60e31-c2ae-4981-b292-46f795a24b9e)
+
 
