@@ -158,3 +158,6 @@ This project proposes an autonomous control system for a robotic manipulator tha
 * **Proffesor Alan Fern** – Project inspiration, OSU
 
 ---
+
+##V1.0 of box stacking system ![image](https://github.com/user-attachments/assets/29004706-4398-443b-9867-7dabdbd538ab)
+
