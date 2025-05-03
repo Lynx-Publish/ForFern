@@ -134,6 +134,10 @@ The goal of this system is to allow a stable refrence to the general location of
 
 ![image](https://github.com/user-attachments/assets/8e539318-386f-4c24-a069-222eaf6206e4)
 
+## V1.0 Goal deduction and transformance into JSON format to later be processed utilizing hardcoded systems of movement and stacking planning utilizing NUExtract-tiny-v1.5 which has seemed to work the best.
+
+![image](https://github.com/user-attachments/assets/4789d481-c3c3-4ceb-a6c1-a42e02893408)
+
 
 
 
