@@ -141,6 +141,11 @@ The goal of this system is to allow a stable refrence to the general location of
 
 ![image](https://github.com/user-attachments/assets/4789d481-c3c3-4ceb-a6c1-a42e02893408)
 
+## V1.6 of the recponstruction system that rebuilds the bounding boxes of the boxes in the area instead of convex hulls, and then utilizes radial coordinates and labeling from the center of the room to craft a consistant local coordinate system.
+
+![image](https://github.com/user-attachments/assets/0e136c9e-f702-4dc1-9189-b0da26a6a13f)
+
+
 
 
 
